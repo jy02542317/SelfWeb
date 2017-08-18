@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/Content/base.css" />
+    <title></title>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+
+        
+
+        function myBrowser() {
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            var isOpera = userAgent.indexOf("Opera") > -1;
+            if (isOpera) {
+                return "Opera"
+            }; //判断是否Opera浏览器
+            if (userAgent.indexOf("Firefox") > -1) {
+                return "FF";
+            } //判断是否Firefox浏览器
+            if (userAgent.indexOf("Chrome") > -1) {
+                return "Chrome";
+            }
+            if (userAgent.indexOf("Safari") > -1) {
+                return "Safari";
+            } //判断是否Safari浏览器
+            if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) {
+                return "IE";
+            }; //判断是否IE浏览器
+        }
+        //以下是调用上面的函数
+        var mb = myBrowser();
+
+        function gopage(url) {
+            $("#content").attr("src", url);
+        }
+
+        function judgeSize() {
+            var h = $(window).innerHeight();          
+            $("#left").height(h).parent().height(h);
+            $("#content").height(h).parent().height(h);      
+        }
+    </script>
+</head>
+<body>
+    <div class="top">
+        <iframe src="/Home/Top"></iframe>
+    </div>
+    <div class="left">
+        <iframe src="/Home/Left" id="left" name="left"></iframe>
+    </div>
+    <div class="main-content">
+        <iframe id="content" name="content" src="/Home/Welcome" onload="judgeSize();"></iframe>
+    </div>
+</body>
+</html>

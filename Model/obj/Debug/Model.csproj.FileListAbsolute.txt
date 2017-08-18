@@ -1,0 +1,7 @@
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\bin\Debug\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\bin\Debug\Model.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\bin\Debug\Util.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\bin\Debug\Util.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.pdb

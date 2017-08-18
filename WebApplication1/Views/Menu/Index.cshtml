@@ -1,0 +1,104 @@
+﻿@model Model.Menu
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+<style>
+    .fl{
+        position:relative;
+        float:left;
+    }
+    .w80{
+        width:80px;
+    }
+</style>
+<div>
+    <div class="TopBar">
+        <div class="light placeholder">
+            <div class="breadcrumb">
+                <a href="">当前位置</a><a href="#">菜单管理</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding:10px;padding-top:0px">
+
+    <div class="btn-toolbar">
+        <a href="#CreateMenu" role="button" data-toggle="modal" class="btn btn-primary" style="position:relative;float:right"><i class="icon-plus"></i> 新建菜单</a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="well">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>菜单名</th>
+                    <th>菜单URL</th>
+                    <th>父节点</th>
+                    <th style="width: 26px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Model.Menu module in ViewBag.MenuList)
+                {
+                    <tr>
+                       <td>
+                           @module.id
+                       </td>
+                        <td>@module.name</td>
+                        <td>@module.url</td>
+                        <td>@module.parent</td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <ul>
+            <li><a href="#">Prev</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+    </div>
+
+    <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the menu?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+        </div>
+    </div>
+
+
+    <div class="modal small hide fade" id="CreateMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">新建菜单</h3>
+        </div>
+        <div class="modal-body">
+            <div style="clear:both">
+                <label class="fl w80">菜单：</label><input type="text" class="fl" id="menu-name" />
+            </div>
+            <div style="clear:both">
+                <label class="fl w80">链接：</label><input type="text" class="fl" id="menu-url" />
+            </div>
+            <div style="clear:both">
+                <label class="fl w80">上级：</label><select id="parent-menu" class="fl"></select>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+            <button class="btn btn-danger" >确定</button>
+        </div>
+    </div>
+</div>

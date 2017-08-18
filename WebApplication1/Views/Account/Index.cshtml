@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@model Model.Account
+
+<style>
+    .TopBar {
+        width: 100%;
+        border-bottom: 1px solid #eeeeee;
+        height: 35px;
+        padding-left: 0px;
+    }
+
+    .middle {
+        width: 30%;
+        margin-left: 35%;
+        top: -50px;
+        margin-top: 20%;
+    }
+    input[type="password"] {
+        width: 160px;
+    }
+ 
+
+    input, label {
+        position: relative;
+        float: left;
+    }
+
+    label {
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .cb {
+        clear: both;
+        line-height: 30px;
+        height: 30px;
+    }
+
+    .md {
+        margin-left: 80px;
+    }
+
+</style>
+
+
+<div>
+    <div class="TopBar">
+        <div class="light placeholder">
+            <div class="breadcrumb">
+                <a href="">当前位置</a><a href="#">修改密码</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="middle">
+        @using (Ajax.BeginForm("ChangePassword", "Account", new AjaxOptions()))
+        {
+            <div class="cb">
+                <label>原密码&nbsp;&nbsp;&nbsp;：</label><input name="oldpassword" type="password" autocomplete="off" />
+            </div>
+            <div class="cb">
+                <label>新密码&nbsp;&nbsp;&nbsp;：</label><input name="newpassword" type="password" autocomplete="off" />
+            </div>
+            <div class="cb">
+                <label>确定密码：</label><input name="confirmpassword" type="password" autocomplete="off" />
+            </div>
+            <div class="cb md">
+                <input type="submit" class="btn btn-primary" value="确认更改" />
+            </div>
+        }
+    </div>
+</div>

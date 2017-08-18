@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9222BB09-73D0-45A5-A433-18E448DF237F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Desktop\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Calendar\fullcalendar.min.css" />
+    <Content Include="Calendar\fullcalendar.min.js" />
+    <Content Include="Calendar\fullcalendar.print.css" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Calendar\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Calendar\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Calendar\lib\jquery-ui.min.js" />
+    <Content Include="Calendar\lib\jquery.min.js" />
+    <Content Include="Calendar\lib\moment.min.js" />
+    <Content Include="Content\base.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\theme.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Image\webwrong.png" />
+    <Content Include="log4net.config" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Image\140x140.gif" />
+    <Content Include="Image\170x170.gif" />
+    <Content Include="Image\background.png" />
+    <Content Include="Image\bg.jpg" />
+    <Content Include="Image\dust.png" />
+    <Content Include="Image\furley_bg.png" />
+    <Content Include="Image\middleman.png" />
+    <Content Include="Image\subtle_surface.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\images\140x140.gif" />
+    <Content Include="Views\images\170x170.gif" />
+    <Content Include="Views\images\background.png" />
+    <Content Include="Views\images\dust.png" />
+    <Content Include="Views\images\furley_bg.png" />
+    <Content Include="Views\images\middleman.png" />
+    <Content Include="Views\images\subtle_surface.png" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="lib\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\docs\assets\css\font-awesome-ie7.css" />
+    <Content Include="lib\font-awesome\docs\assets\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\docs\assets\css\prettify.css" />
+    <Content Include="lib\font-awesome\docs\assets\css\site.css" />
+    <Content Include="lib\font-awesome\docs\assets\font\fontawesome-webfont.svg" />
+    <Content Include="lib\font-awesome\docs\assets\ico\favicon.ico" />
+    <Content Include="lib\font-awesome\docs\assets\js\backbone.min.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\index\index.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\prettify.min.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-alert.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-button.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-carousel.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-collapse.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-dropdown.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-modal.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-popover.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-scrollspy.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-tab.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-tooltip.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-transition.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\tw-bs-201\bootstrap-typeahead.js" />
+    <Content Include="lib\font-awesome\docs\assets\js\underscore.min.js" />
+    <Content Include="lib\font-awesome\docs\index.html" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="lib\fullcalendar-1.5.3\changelog.txt" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\agenda-views.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\basic-views.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\cupertino\theme.css" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\default.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\external-dragging.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\gcal.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\json.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\selectable.html" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\theme.html" />
+    <Content Include="lib\fullcalendar-1.5.3\fullcalendar\fullcalendar.css" />
+    <Content Include="lib\fullcalendar-1.5.3\fullcalendar\fullcalendar.js" />
+    <Content Include="lib\fullcalendar-1.5.3\fullcalendar\fullcalendar.min.js" />
+    <Content Include="lib\fullcalendar-1.5.3\fullcalendar\fullcalendar.print.css" />
+    <Content Include="lib\fullcalendar-1.5.3\fullcalendar\gcal.js" />
+    <Content Include="lib\fullcalendar-1.5.3\GPL-LICENSE.txt" />
+    <Content Include="lib\fullcalendar-1.5.3\jquery\jquery-1.7.1.min.js" />
+    <Content Include="lib\fullcalendar-1.5.3\jquery\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="lib\fullcalendar-1.5.3\MIT-LICENSE.txt" />
+    <Content Include="lib\jqplot\changes.txt" />
+    <Content Include="lib\jqplot\copyright.txt" />
+    <Content Include="lib\jqplot\docs\files\changes-txt.html" />
+    <Content Include="lib\jqplot\docs\files\gpl-2-0-txt.html" />
+    <Content Include="lib\jqplot\docs\files\images\background.jpg" />
+    <Content Include="lib\jqplot\docs\files\images\basicline.png" />
+    <Content Include="lib\jqplot\docs\files\images\basiclogaxis.png" />
+    <Content Include="lib\jqplot\docs\files\images\basiclogoptions.png" />
+    <Content Include="lib\jqplot\docs\files\images\basicoptions.png" />
+    <Content Include="lib\jqplot\docs\files\images\dualaxis.png" />
+    <Content Include="lib\jqplot\docs\files\images\logo.jpg" />
+    <Content Include="lib\jqplot\docs\files\images\navdocs.png" />
+    <Content Include="lib\jqplot\docs\files\images\navdocsover.png" />
+    <Content Include="lib\jqplot\docs\files\images\navdownload.png" />
+    <Content Include="lib\jqplot\docs\files\images\navdownloadover.png" />
+    <Content Include="lib\jqplot\docs\files\images\navexamples.png" />
+    <Content Include="lib\jqplot\docs\files\images\navexamplesover.png" />
+    <Content Include="lib\jqplot\docs\files\images\navhome.png" />
+    <Content Include="lib\jqplot\docs\files\images\navhomeover.png" />
+    <Content Include="lib\jqplot\docs\files\images\new.png" />
+    <Content Include="lib\jqplot\docs\files\images\sample3.png" />
+    <Content Include="lib\jqplot\docs\files\images\samplesm.png" />
+    <Content Include="lib\jqplot\docs\files\jqplot-axisLabelRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-axisTickRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-canvasGridRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-core-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-divTitleRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-linearAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-lineRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-markerRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-shadowRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-shapeRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-themeEngine-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqplot-toImage-js.html" />
+    <Content Include="lib\jqplot\docs\files\jqPlotCssStyling-txt.html" />
+    <Content Include="lib\jqplot\docs\files\jqPlotOptions-txt.html" />
+    <Content Include="lib\jqplot\docs\files\MIT-LICENSE-txt.html" />
+    <Content Include="lib\jqplot\docs\files\optionsTutorial-txt.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-barRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-BezierCurveRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-blockRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-bubbleRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-canvasAxisLabelRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-canvasAxisTickRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-canvasOverlay-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-categoryAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-ciParser-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-cursor-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-dateAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-donutRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-dragable-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-enhancedLegendRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-funnelRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-highlighter-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-logAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-mekkoAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-mekkoRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-meterGaugeRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-ohlcRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-pieRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-pointLabels-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-pyramidAxisRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-pyramidGridRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-pyramidRenderer-js.html" />
+    <Content Include="lib\jqplot\docs\files\plugins\jqplot-trendline-js.html" />
+    <Content Include="lib\jqplot\docs\files\usage-txt.html" />
+    <Content Include="lib\jqplot\docs\index.html" />
+    <Content Include="lib\jqplot\docs\index\Classes.html" />
+    <Content Include="lib\jqplot\docs\index\Files.html" />
+    <Content Include="lib\jqplot\docs\index\Functions.html" />
+    <Content Include="lib\jqplot\docs\index\General.html" />
+    <Content Include="lib\jqplot\docs\index\General2.html" />
+    <Content Include="lib\jqplot\docs\index\General3.html" />
+    <Content Include="lib\jqplot\docs\index\General4.html" />
+    <Content Include="lib\jqplot\docs\index\General5.html" />
+    <Content Include="lib\jqplot\docs\index\General6.html" />
+    <Content Include="lib\jqplot\docs\index\General7.html" />
+    <Content Include="lib\jqplot\docs\index\Hooks.html" />
+    <Content Include="lib\jqplot\docs\index\Properties.html" />
+    <Content Include="lib\jqplot\docs\index\Properties2.html" />
+    <Content Include="lib\jqplot\docs\index\Properties3.html" />
+    <Content Include="lib\jqplot\docs\index\Properties4.html" />
+    <Content Include="lib\jqplot\docs\index\Properties5.html" />
+    <Content Include="lib\jqplot\docs\index\Properties6.html" />
+    <Content Include="lib\jqplot\docs\javascript\main.js" />
+    <Content Include="lib\jqplot\docs\javascript\searchdata.js" />
+    <Content Include="lib\jqplot\docs\search\ClassesA.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesD.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesG.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesH.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesJ.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesL.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesS.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesSymbols.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesT.html" />
+    <Content Include="lib\jqplot\docs\search\ClassesV.html" />
+    <Content Include="lib\jqplot\docs\search\FilesJ.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsC.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsD.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsG.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsI.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsM.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsN.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsQ.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsR.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsS.html" />
+    <Content Include="lib\jqplot\docs\search\FunctionsZ.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralA.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralB.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralC.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralD.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralE.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralF.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralG.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralH.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralI.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralJ.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralL.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralM.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralN.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralO.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralP.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralQ.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralR.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralS.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralSymbols.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralT.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralU.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralV.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralW.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralX.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralY.html" />
+    <Content Include="lib\jqplot\docs\search\GeneralZ.html" />
+    <Content Include="lib\jqplot\docs\search\HooksA.html" />
+    <Content Include="lib\jqplot\docs\search\HooksE.html" />
+    <Content Include="lib\jqplot\docs\search\HooksJ.html" />
+    <Content Include="lib\jqplot\docs\search\HooksP.html" />
+    <Content Include="lib\jqplot\docs\search\NoResults.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesA.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesB.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesC.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesD.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesE.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesF.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesG.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesH.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesI.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesL.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesM.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesN.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesO.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesP.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesR.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesS.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesT.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesU.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesV.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesW.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesX.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesY.html" />
+    <Content Include="lib\jqplot\docs\search\PropertiesZ.html" />
+    <Content Include="lib\jqplot\docs\styles\1.css" />
+    <Content Include="lib\jqplot\docs\styles\2.css" />
+    <Content Include="lib\jqplot\docs\styles\main.css" />
+    <Content Include="lib\jqplot\examples\ajax-loader.gif" />
+    <Content Include="lib\jqplot\examples\area.html" />
+    <Content Include="lib\jqplot\examples\axisLabelsRotatedText.html" />
+    <Content Include="lib\jqplot\examples\axisLabelTests.html" />
+    <Content Include="lib\jqplot\examples\axisScalingForceTickAt.html" />
+    <Content Include="lib\jqplot\examples\bandedLine.html" />
+    <Content Include="lib\jqplot\examples\bar-charts.html" />
+    <Content Include="lib\jqplot\examples\barLineAnimated.html" />
+    <Content Include="lib\jqplot\examples\barTest.html" />
+    <Content Include="lib\jqplot\examples\bezierCurve.html" />
+    <Content Include="lib\jqplot\examples\blockPlot.html" />
+    <Content Include="lib\jqplot\examples\bubble-plots.html" />
+    <Content Include="lib\jqplot\examples\bubbleChart.html" />
+    <Content Include="lib\jqplot\examples\candlestick-charts.html" />
+    <Content Include="lib\jqplot\examples\candlestick.html" />
+    <Content Include="lib\jqplot\examples\canvas-overlay.html" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\bar-alpha.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\bar-opacity.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\bar-pointer.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\bar.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\map-opacity.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\map-pointer.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\map.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\preview-opacity.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\images\ui-colorpicker.png" />
+    <Content Include="lib\jqplot\examples\colorpicker\index.html" />
+    <Content Include="lib\jqplot\examples\colorpicker\jquery.colorpicker.css" />
+    <Content Include="lib\jqplot\examples\colorpicker\jquery.colorpicker.js" />
+    <Content Include="lib\jqplot\examples\cursor-highlighter.html" />
+    <Content Include="lib\jqplot\examples\customHighlighterCursorTrendline.html" />
+    <Content Include="lib\jqplot\examples\dashboardWidget.html" />
+    <Content Include="lib\jqplot\examples\dashedLines.html" />
+    <Content Include="lib\jqplot\examples\data-renderers.html" />
+    <Content Include="lib\jqplot\examples\date-axes.html" />
+    <Content Include="lib\jqplot\examples\dateAxisLogAxisZooming.html" />
+    <Content Include="lib\jqplot\examples\dateAxisRenderer.html" />
+    <Content Include="lib\jqplot\examples\example.js" />
+    <Content Include="lib\jqplot\examples\example.min.js" />
+    <Content Include="lib\jqplot\examples\examples.css" />
+    <Content Include="lib\jqplot\examples\examples.min.css" />
+    <Content Include="lib\jqplot\examples\fillBetweenLines.html" />
+    <Content Include="lib\jqplot\examples\hiddenPlotsInTabs.html" />
+    <Content Include="lib\jqplot\examples\images\logo.jpg" />
+    <Content Include="lib\jqplot\examples\images\ui-colorpicker.png" />
+    <Content Include="lib\jqplot\examples\index.html" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\jquery-ui.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\smoothness\jquery-ui.min.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\jquery-ui-1.9pre.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\jquery-ui-1.9pre.min.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\jquery-ui.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\css\ui-lightness\jquery-ui.min.css" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery-ui-1.9pre.min.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery-ui.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery-ui.min.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery.effects.blind.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery.effects.blind.min.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery.effects.core.js" />
+    <Content Include="lib\jqplot\examples\jquery-ui\js\jquery.effects.core.min.js" />
+    <Content Include="lib\jqplot\examples\jquery.print.js" />
+    <Content Include="lib\jqplot\examples\jquery.printElement.min.js" />
+    <Content Include="lib\jqplot\examples\jsondata.txt" />
+    <Content Include="lib\jqplot\examples\kcp.print.js" />
+    <Content Include="lib\jqplot\examples\kcp_area.html" />
+    <Content Include="lib\jqplot\examples\kcp_area2.html" />
+    <Content Include="lib\jqplot\examples\kcp_cdf.html" />
+    <Content Include="lib\jqplot\examples\kcp_engel.html" />
+    <Content Include="lib\jqplot\examples\kcp_lorenz.html" />
+    <Content Include="lib\jqplot\examples\kcp_pdf.html" />
+    <Content Include="lib\jqplot\examples\kcp_pyramid.html" />
+    <Content Include="lib\jqplot\examples\kcp_pyramid2.html" />
+    <Content Include="lib\jqplot\examples\kcp_pyramid_by_age.html" />
+    <Content Include="lib\jqplot\examples\kcp_quintiles.html" />
+    <Content Include="lib\jqplot\examples\line-charts.html" />
+    <Content Include="lib\jqplot\examples\mekkoCharts.html" />
+    <Content Include="lib\jqplot\examples\meritOrder.html" />
+    <Content Include="lib\jqplot\examples\meterGauge.html" />
+    <Content Include="lib\jqplot\examples\multipleBarColors.html" />
+    <Content Include="lib\jqplot\examples\nav.inc" />
+    <Content Include="lib\jqplot\examples\pie-donut-charts.html" />
+    <Content Include="lib\jqplot\examples\pieTest.html" />
+    <Content Include="lib\jqplot\examples\pieTest2.js" />
+    <Content Include="lib\jqplot\examples\pieTest4.html" />
+    <Content Include="lib\jqplot\examples\point-labels.html" />
+    <Content Include="lib\jqplot\examples\resizablePlot.html" />
+    <Content Include="lib\jqplot\examples\rotated-tick-labels.html" />
+    <Content Include="lib\jqplot\examples\rotatedTickLabelsZoom.html" />
+    <Content Include="lib\jqplot\examples\selectorSyntax.html" />
+    <Content Include="lib\jqplot\examples\smoothedLine.html" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shAutoloader.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shAutoloader.min.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shBrushJScript.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shBrushJScript.min.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shBrushXml.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shBrushXml.min.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shCore.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\scripts\shCore.min.js" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shCore.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shCore.min.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shCoreDefault.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shCoreDefault.min.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shThemeDefault.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shThemeDefault.min.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shThemejqPlot.css" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\styles\shThemejqPlot.min.css" />
+    <Content Include="lib\jqplot\examples\theming.html" />
+    <Content Include="lib\jqplot\examples\topbanner.inc" />
+    <Content Include="lib\jqplot\examples\waterfall.html" />
+    <Content Include="lib\jqplot\examples\waterfall2.html" />
+    <Content Include="lib\jqplot\examples\yahooData.js" />
+    <Content Include="lib\jqplot\examples\yahooData.min.js" />
+    <Content Include="lib\jqplot\examples\zoom1.html" />
+    <Content Include="lib\jqplot\examples\zooming.html" />
+    <Content Include="lib\jqplot\examples\zoomOptions.html" />
+    <Content Include="lib\jqplot\examples\zoomProxy.html" />
+    <Content Include="lib\jqplot\excanvas.js" />
+    <Content Include="lib\jqplot\excanvas.min.js" />
+    <Content Include="lib\jqplot\gpl-2.0.txt" />
+    <Content Include="lib\jqplot\jqPlotCssStyling.txt" />
+    <Content Include="lib\jqplot\jqPlotOptions.txt" />
+    <Content Include="lib\jqplot\jquery.jqplot.css" />
+    <Content Include="lib\jqplot\jquery.jqplot.js" />
+    <Content Include="lib\jqplot\jquery.jqplot.min.css" />
+    <Content Include="lib\jqplot\jquery.jqplot.min.js" />
+    <Content Include="lib\jqplot\jquery.js" />
+    <Content Include="lib\jqplot\jquery.min.js" />
+    <Content Include="lib\jqplot\MIT-LICENSE.txt" />
+    <Content Include="lib\jqplot\optionsTutorial.txt" />
+    <Content Include="lib\jqplot\plugins\jqplot.barRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.ciParser.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.cursor.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.cursor.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.dragable.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.dragable.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.highlighter.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.json2.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.json2.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mobile.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.mobile.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pointLabels.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.trendline.js" />
+    <Content Include="lib\jqplot\plugins\jqplot.trendline.min.js" />
+    <Content Include="lib\jqplot\README.txt" />
+    <Content Include="lib\jqplot\usage.txt" />
+    <Content Include="lib\jquery-1.8.1.min.js" />
+    <Content Include="stylesheets\elements.css" />
+    <Content Include="stylesheets\myelements.css" />
+    <Content Include="stylesheets\theme.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Filter\AppSession.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Top.cshtml" />
+    <Content Include="Views\Home\Left.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="lib\.DS_Store" />
+    <Content Include="lib\font-awesome\.gitignore" />
+    <Content Include="lib\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\docs\assets\font\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\docs\assets\font\museo_slab_300-webfont.eot" />
+    <Content Include="lib\font-awesome\docs\assets\font\museo_slab_300-webfont.ttf" />
+    <Content Include="lib\font-awesome\docs\assets\font\museo_slab_500-webfont.eot" />
+    <Content Include="lib\font-awesome\docs\assets\font\museo_slab_500-webfont.ttf" />
+    <Content Include="lib\font-awesome\docs\assets\font\proximanova-webfont.eot" />
+    <Content Include="lib\font-awesome\docs\assets\font\proximanova-webfont.ttf" />
+    <Content Include="lib\font-awesome\docs\assets\less\font-awesome-ie7.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\font-awesome.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\font-site.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\mixins.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\site.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\accordion.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\alerts.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\bootstrap.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\breadcrumbs.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\button-groups.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\buttons.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\carousel.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\close.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\code.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\component-animations.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\dropdowns.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\forms.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\grid.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\hero-unit.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\labels-badges.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\layouts.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\mixins.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\modals.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\navbar.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\navs.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\pager.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\pagination.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\popovers.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\progress-bars.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\reset.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive-1200px-min.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive-767px-max.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive-768px-979px.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive-navbar.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive-utilities.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\responsive.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\scaffolding.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\sprites.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\tables.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\thumbnails.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\tooltip.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\type.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\utilities.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\variables.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\twbs-203\wells.less" />
+    <Content Include="lib\font-awesome\docs\assets\less\variables.less" />
+    <Content Include="lib\font-awesome\FontAwesome-Vectors.pdf" />
+    <Content Include="lib\font-awesome\FontAwesome.ttf" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="lib\font-awesome\less\font-awesome.less" />
+    <Content Include="lib\font-awesome\README.md" />
+    <Content Include="lib\font-awesome\sass\font-awesome.sass" />
+    <Content Include="lib\font-awesome\sass\font-awesome.scss" />
+    <Content Include="lib\fullcalendar-1.5.3\demos\json-events.php" />
+    <Content Include="lib\jqplot\.DS_Store" />
+    <Content Include="lib\jqplot\examples\ages.json" />
+    <Content Include="lib\jqplot\examples\ages.json.bak" />
+    <Content Include="lib\jqplot\examples\colorpicker\README" />
+    <Content Include="lib\jqplot\examples\colorpicker\TODO" />
+    <Content Include="lib\jqplot\examples\KCPsample4.csv" />
+    <Content Include="lib\jqplot\examples\kcp_area2.json" />
+    <Content Include="lib\jqplot\examples\kcp_pyramid_by_age.php" />
+    <Content Include="lib\jqplot\examples\mekkoCharts.php.orig" />
+    <Content Include="lib\jqplot\examples\quintiles.json" />
+    <Content Include="lib\jqplot\examples\resizablePlot.php.orig" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\LGPL-LICENSE" />
+    <Content Include="lib\jqplot\examples\syntaxhighlighter\MIT-LICENSE" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{85aa7627-39dd-4df6-a3b4-f1e616cfdfc5}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{c01bd986-dbde-4b95-a268-2a4167db639a}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53158</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53158/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

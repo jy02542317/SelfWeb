@@ -1,0 +1,9 @@
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\DAO.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\DAO.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\Util.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\Model.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Release\Util.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Release\DAO.csprojResolveAssemblyReference.cache
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Release\DAO.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Release\DAO.pdb

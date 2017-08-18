@@ -1,0 +1,75 @@
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\WebApplication1.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\WebApplication1.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\BLL.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\itextsharp.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\log4net.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.Deployment.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.Razor.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\DAO.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Util.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\BLL.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Model.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\log4net.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Newtonsoft.Json.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.Deployment.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Webpages.Razor.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\DAO.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\Util.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Webpages.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\WebApplication1\obj\Debug\WebApplication1.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\WebApplication1.dll.config
+E:\GitCode\SelfWeb\WebApplication1\bin\WebApplication1.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\WebApplication1.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\BLL.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\log4net.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\Model.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\Newtonsoft.Json.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Helpers.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Mvc.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Razor.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.Deployment.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.Razor.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\DAO.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\Util.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\BLL.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\Model.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\log4net.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\Newtonsoft.Json.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Razor.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.Deployment.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Webpages.Razor.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Helpers.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\System.Web.Mvc.xml
+E:\GitCode\SelfWeb\WebApplication1\bin\DAO.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\Util.pdb
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Razor.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Webpages.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Helpers.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\bin\zh-Hans\System.Web.Mvc.resources.dll
+E:\GitCode\SelfWeb\WebApplication1\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\WebApplication1\obj\Debug\WebApplication1.dll
+E:\GitCode\SelfWeb\WebApplication1\obj\Debug\WebApplication1.pdb

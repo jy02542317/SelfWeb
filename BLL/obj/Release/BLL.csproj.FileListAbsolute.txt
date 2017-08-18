@@ -1,0 +1,9 @@
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\BLL.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\BLL.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\DAO.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\DAO.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Release\Model.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Release\BLL.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Release\BLL.pdb

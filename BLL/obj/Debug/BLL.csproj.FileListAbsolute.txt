@@ -1,0 +1,11 @@
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\BLL.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\BLL.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\DAO.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\Model.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\Util.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\DAO.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\Model.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\Util.pdb
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.dll
+C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.pdb
