@@ -262,7 +262,7 @@ namespace DAO
             return result;
         }
 
-        protected static T DataTableTo<T>(DataTable table)
+        public static T DataTableTo<T>(DataTable table)
         {
             T t = default(T);
             PropertyInfo[] propertypes = null;
@@ -283,7 +283,7 @@ namespace DAO
             return t;
         }
 
-        protected static IList<T> DataTableToList<T>(DataTable table)
+        public static IList<T> DataTableToList<T>(DataTable table)
         {
             IList<T> list = new List<T>();
             T t = default(T);
