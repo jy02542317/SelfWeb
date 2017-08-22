@@ -7,3 +7,12 @@ C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\bin\Debug\
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Debug\DAO.dll
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\DAO\obj\Debug\DAO.pdb
+E:\GitCode\SelfWeb\DAO\bin\Debug\DAO.dll
+E:\GitCode\SelfWeb\DAO\bin\Debug\DAO.pdb
+E:\GitCode\SelfWeb\DAO\bin\Debug\Model.dll
+E:\GitCode\SelfWeb\DAO\bin\Debug\Util.dll
+E:\GitCode\SelfWeb\DAO\bin\Debug\Model.pdb
+E:\GitCode\SelfWeb\DAO\bin\Debug\Util.pdb
+E:\GitCode\SelfWeb\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\DAO\obj\Debug\DAO.dll
+E:\GitCode\SelfWeb\DAO\obj\Debug\DAO.pdb

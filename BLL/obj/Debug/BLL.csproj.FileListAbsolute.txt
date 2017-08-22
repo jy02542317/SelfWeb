@@ -9,3 +9,14 @@ C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\bin\Debug\
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.dll
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\BLL\obj\Debug\BLL.pdb
+E:\GitCode\SelfWeb\BLL\bin\Debug\BLL.dll
+E:\GitCode\SelfWeb\BLL\bin\Debug\BLL.pdb
+E:\GitCode\SelfWeb\BLL\bin\Debug\DAO.dll
+E:\GitCode\SelfWeb\BLL\bin\Debug\Model.dll
+E:\GitCode\SelfWeb\BLL\bin\Debug\Util.dll
+E:\GitCode\SelfWeb\BLL\bin\Debug\DAO.pdb
+E:\GitCode\SelfWeb\BLL\bin\Debug\Model.pdb
+E:\GitCode\SelfWeb\BLL\bin\Debug\Util.pdb
+E:\GitCode\SelfWeb\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\BLL\obj\Debug\BLL.dll
+E:\GitCode\SelfWeb\BLL\obj\Debug\BLL.pdb

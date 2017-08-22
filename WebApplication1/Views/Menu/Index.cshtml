@@ -12,6 +12,31 @@
         width:80px;
     }
 </style>
+
+<script type="text/javascript">
+    function btnclick() {
+        var name = $("#menu-name").val();
+        var url = $("#menu-url").val();
+        var parentid = 1;
+        $.ajax(
+        {
+            url: '/Menu/AddMenu',      // 指定调用的URL，对应于Controller
+            data: "{name:'" + name + "',url:'" + url + "',parentid:'" + parentid + "'}",                             // 如果请求有参数，需要在这里指定
+            type: "POST",                           // 请求类型
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                // 请求成功后的回调
+
+                alert(1);
+            },
+            error: function (data) {                // 请求失败后的回调
+                alert(2)
+            }
+        });
+    }
+        
+</script>
 <div>
     <div class="TopBar">
         <div class="light placeholder">
@@ -54,7 +79,7 @@
             </tbody>
         </table>
     </div>
-    <div class="pagination">
+    @*<div class="pagination">
         <ul>
             <li><a href="#">Prev</a></li>
             <li><a href="#">1</a></li>
@@ -63,8 +88,9 @@
             <li><a href="#">4</a></li>
             <li><a href="#">Next</a></li>
         </ul>
-    </div>
-
+    </div>*@
+    
+    
     <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -98,7 +124,7 @@
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-            <button class="btn btn-danger" >确定</button>
+            <button class="btn btn-danger" id="btnAddSubmit" onclick="btnclick()" >确定</button>
         </div>
     </div>
 </div>

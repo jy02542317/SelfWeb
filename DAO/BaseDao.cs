@@ -35,6 +35,18 @@ namespace DAO
                 if (attributes.Count() == 0)
                 {
                     object obj = i.GetValue(t, null);
+    
+                    if (obj == null)
+                    {//去掉空属性
+                        continue;
+                    }
+                    if (i.PropertyType == typeof(DateTime))
+                    {//时间属性初始化时未赋值会变为默认最小值
+                        DateTime dt;
+                        DateTime.TryParse(obj.ToString(), out dt);
+                        if (dt <= DateTime.MinValue)
+                            continue;
+                    }
                     string name = i.Name;
                     InsertColumn.Append(name);
                     InsertParameter.Append('@' + name);
@@ -47,8 +59,7 @@ namespace DAO
                     }
                 }
             }
-
-            InsertSQL.Append(string.Format(@"Insert into {0} ({1}) values ({2}) ", TableName, InsertColumn.ToString(), InsertParameter.ToString()));
+            InsertSQL.Append(string.Format(@"Insert into {0} ({1}) values ({2}); ", TableName, InsertColumn.ToString(), InsertParameter.ToString()));
 
             try
             {

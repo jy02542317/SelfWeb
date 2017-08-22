@@ -5,3 +5,10 @@ C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\bin\Debu
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.dll
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Model\obj\Debug\Model.pdb
+E:\GitCode\SelfWeb\Model\bin\Debug\Model.dll
+E:\GitCode\SelfWeb\Model\bin\Debug\Model.pdb
+E:\GitCode\SelfWeb\Model\bin\Debug\Util.dll
+E:\GitCode\SelfWeb\Model\bin\Debug\Util.pdb
+E:\GitCode\SelfWeb\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\Model\obj\Debug\Model.dll
+E:\GitCode\SelfWeb\Model\obj\Debug\Model.pdb

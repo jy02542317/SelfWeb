@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Util.Attribute;
 
 namespace Model
 {
     public class Menu : BaseModel
     {
-        
 
+       
         private int _id;
+
+         [PK]
         public int id
         {
             get { return _id; }

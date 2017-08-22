@@ -49,9 +49,13 @@ namespace WebApplication1.Controllers
             return Json(_json, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult AddMenu(Menu menu)
+        public ActionResult AddMenu(string name,string url,int parentid)
         {
             BLL_Menu blm = new BLL_Menu();
+            Menu menu = new Menu();
+            menu.name = name;
+            menu.url = url;
+            menu.parent = parentid;
             blm.Add(menu);
             return Json("");
         }

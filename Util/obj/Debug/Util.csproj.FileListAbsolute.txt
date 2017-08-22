@@ -4,3 +4,8 @@ C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Util\bin\Debug
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Util\obj\Debug\Util.dll
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Util\obj\Debug\Util.pdb
 C:\Users\jeffery.xu\Documents\Visual Studio 2013\Projects\WebDemo\Util\obj\Debug\Util.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\Util\bin\Debug\Util.dll.config
+E:\GitCode\SelfWeb\Util\bin\Debug\Util.dll
+E:\GitCode\SelfWeb\Util\bin\Debug\Util.pdb
+E:\GitCode\SelfWeb\Util\obj\Debug\Util.dll
+E:\GitCode\SelfWeb\Util\obj\Debug\Util.pdb
