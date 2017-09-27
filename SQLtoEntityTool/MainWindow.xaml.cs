@@ -33,10 +33,33 @@ namespace SQLtoEntityTool
         {
             TextRange textRange = new TextRange(TbxSql.Document.ContentStart, TbxSql.Document.ContentEnd);
             string sql = textRange.Text.Trim();
-            DataSet ds = DBHelper.GetDataSet(sql);
+            if (string.IsNullOrEmpty(sql))
+            {
+                string result = "SQL不能为空！";
+                Clear();
+                Paragraph Pr = new Paragraph();
+                Pr.Inlines.Add(result);
+                Rtbx.Document.Blocks.Add(Pr);
+            }
+            else
+            {
+                try
+                {
+                    DataSet ds = DBHelper.GetDataSet(sql);
+
+                    if (ds != null)
+                        ConvertToEntity(ds.Tables[0]);
+                }
+                catch(Exception ex)
+                {
+                    Clear();
+                    string result = ex.ToString();
+                    Paragraph Pr = new Paragraph();
+                    Pr.Inlines.Add(result);
+                    Rtbx.Document.Blocks.Add(Pr);
+                }
+            }
             
-            if (ds != null && ds.Tables.Count > 0)
-                ConvertToEntity(ds.Tables[0]);
         }
 
         private void ConvertToEntity(DataTable dt)
@@ -123,6 +146,22 @@ namespace SQLtoEntityTool
                 ch[0] = (char)(ch[0] - 32);
             }
             return new String(ch);
-        } 
+        }
+
+        public void Clear()
+        {
+            TbxSql.Document.Blocks.Clear();
+            Rtbx.Document.Blocks.Clear();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

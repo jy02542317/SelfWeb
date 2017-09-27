@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{D10D6735-A7A4-4AAC-B039-20044CEB1CE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{6F3E95E0-B29D-4646-9FCD-FF4E68ECE9DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLtoEntityTool", "SQLtoEntityTool\SQLtoEntityTool.csproj", "{33A6DBE1-CB13-4ED8-8D44-A2465C36F9D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D10D6735-A7A4-4AAC-B039-20044CEB1CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D10D6735-A7A4-4AAC-B039-20044CEB1CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D10D6735-A7A4-4AAC-B039-20044CEB1CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3E95E0-B29D-4646-9FCD-FF4E68ECE9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3E95E0-B29D-4646-9FCD-FF4E68ECE9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3E95E0-B29D-4646-9FCD-FF4E68ECE9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3E95E0-B29D-4646-9FCD-FF4E68ECE9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A6DBE1-CB13-4ED8-8D44-A2465C36F9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A6DBE1-CB13-4ED8-8D44-A2465C36F9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A6DBE1-CB13-4ED8-8D44-A2465C36F9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A6DBE1-CB13-4ED8-8D44-A2465C36F9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
