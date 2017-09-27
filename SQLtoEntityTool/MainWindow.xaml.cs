@@ -50,7 +50,7 @@ namespace SQLtoEntityTool
                     if (ds != null)
                         ConvertToEntity(ds.Tables[0]);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Clear();
                     string result = ex.ToString();
@@ -59,7 +59,7 @@ namespace SQLtoEntityTool
                     Rtbx.Document.Blocks.Add(Pr);
                 }
             }
-            
+
         }
 
         private void ConvertToEntity(DataTable dt)
@@ -68,19 +68,19 @@ namespace SQLtoEntityTool
             string result = string.Empty;
             for (int i = 0; i < count; i++)
             {
-               StringBuilder AttributeName = new StringBuilder();
-               Type type = dt.Columns[i].DataType;
-               string type_name = ConvertDataType(type.Name);
-               string name = UpperCase(dt.Columns[i].ColumnName);
-               string firstFlag = type_name.ElementAt(0).ToString().ToLower();
-               string pname = firstFlag + name;
-               AttributeName.Append("private "+ type_name + " " + pname + ";\n\n");
-               AttributeName.Append("public " + type_name + " " + name + "\n");
-               AttributeName.Append("{\n");
-               AttributeName.Append("\t get { return " + pname + "; }\n");
-               AttributeName.Append("\t set { " + pname + " = value; }\n");
-               AttributeName.Append("}\n\n");
-               result += AttributeName.ToString();
+                StringBuilder AttributeName = new StringBuilder();
+                Type type = dt.Columns[i].DataType;
+                string type_name = ConvertDataType(type.Name);
+                string name = UpperCase(dt.Columns[i].ColumnName);
+                string firstFlag = type_name.ElementAt(0).ToString().ToLower();
+                string pname = firstFlag + name;
+                AttributeName.Append("private " + type_name + " " + pname + ";\n\n");
+                AttributeName.Append("public " + type_name + " " + name + "\n");
+                AttributeName.Append("{\n");
+                AttributeName.Append("\t get { return " + pname + "; }\n");
+                AttributeName.Append("\t set { " + pname + " = value; }\n");
+                AttributeName.Append("}\n\n");
+                result += AttributeName.ToString();
             }
             Rtbx.Document.Blocks.Clear();
             Paragraph Pr = new Paragraph();
@@ -90,8 +90,9 @@ namespace SQLtoEntityTool
 
         private string ConvertDataType(string name)
         {
-            string result=string.Empty;
-            switch(name){
+            string result = string.Empty;
+            switch (name)
+            {
                 case "Int32":
                     result = "int";
                     break;
@@ -156,7 +157,47 @@ namespace SQLtoEntityTool
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string ip = this.TBXIP.Text;
+            string db = this.TBXDB.Text;
+            string dbus = this.TBXDBUS.Text;
+            string dbpd = this.TBXDBPD.Text;
 
+            if (string.IsNullOrEmpty(ip))
+            {
+                MessageBox.Show("请填写IP");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(db))
+            {
+                MessageBox.Show("请填写数据库名称");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(dbus))
+            {
+                MessageBox.Show("请填写数据库用户名");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(dbpd))
+            {
+                MessageBox.Show("请填写数据库密码");
+                return;
+            }
+
+            string connection = string.Empty;
+            Logic logic = new Logic();
+            connection = logic.ComposeSQL(ip, db, dbus, dbpd);
+            bool result = logic.ConnectSQLTest(connection);
+            if (result)
+            {
+                MessageBox.Show("连接成功");
+            }
+            else
+            {
+                MessageBox.Show("连接失败");
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
