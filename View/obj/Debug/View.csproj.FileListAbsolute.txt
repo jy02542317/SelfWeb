@@ -1,0 +1,7 @@
+E:\GitCode\SelfWeb\View\bin\Debug\View.dll
+E:\GitCode\SelfWeb\View\bin\Debug\View.pdb
+E:\GitCode\SelfWeb\View\bin\Debug\Util.dll
+E:\GitCode\SelfWeb\View\bin\Debug\Util.pdb
+E:\GitCode\SelfWeb\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\View\obj\Debug\View.dll
+E:\GitCode\SelfWeb\View\obj\Debug\View.pdb
