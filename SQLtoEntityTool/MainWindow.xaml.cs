@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Util;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace SQLtoEntityTool
@@ -29,14 +30,16 @@ namespace SQLtoEntityTool
             InitializeComponent();
         }
 
+        #region Event
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TextRange textRange = new TextRange(TbxSql.Document.ContentStart, TbxSql.Document.ContentEnd);
             string sql = textRange.Text.Trim();
+            string result = string.Empty;
             if (string.IsNullOrEmpty(sql))
             {
-                string result = "SQL不能为空！";
                 Clear();
+                result = "SQL不能为空！"; 
                 Paragraph Pr = new Paragraph();
                 Pr.Inlines.Add(result);
                 Rtbx.Document.Blocks.Add(Pr);
@@ -48,12 +51,20 @@ namespace SQLtoEntityTool
                     DataSet ds = DBHelper.GetDataSet(sql);
 
                     if (ds != null)
-                        ConvertToEntity(ds.Tables[0]);
+                    {
+                        Logic logic = new Logic();
+                        result = logic.ConvertToEntity(ds.Tables[0]);
+                    }
+                        
+                    Rtbx.Document.Blocks.Clear();
+                    Paragraph Pr = new Paragraph();
+                    Pr.Inlines.Add(result);
+                    Rtbx.Document.Blocks.Add(Pr);
                 }
                 catch (Exception ex)
                 {
                     Clear();
-                    string result = ex.ToString();
+                    result = ex.ToString();
                     Paragraph Pr = new Paragraph();
                     Pr.Inlines.Add(result);
                     Rtbx.Document.Blocks.Add(Pr);
@@ -62,101 +73,51 @@ namespace SQLtoEntityTool
 
         }
 
-        private void ConvertToEntity(DataTable dt)
-        {
-            int count = dt.Columns.Count;
-            string result = string.Empty;
-            for (int i = 0; i < count; i++)
-            {
-                StringBuilder AttributeName = new StringBuilder();
-                Type type = dt.Columns[i].DataType;
-                string type_name = ConvertDataType(type.Name);
-                string name = UpperCase(dt.Columns[i].ColumnName);
-                string firstFlag = type_name.ElementAt(0).ToString().ToLower();
-                string pname = firstFlag + name;
-                AttributeName.Append("private " + type_name + " " + pname + ";\n\n");
-                AttributeName.Append("public " + type_name + " " + name + "\n");
-                AttributeName.Append("{\n");
-                AttributeName.Append("\t get { return " + pname + "; }\n");
-                AttributeName.Append("\t set { " + pname + " = value; }\n");
-                AttributeName.Append("}\n\n");
-                result += AttributeName.ToString();
-            }
-            Rtbx.Document.Blocks.Clear();
-            Paragraph Pr = new Paragraph();
-            Pr.Inlines.Add(result);
-            Rtbx.Document.Blocks.Add(Pr);
-        }
-
-        private string ConvertDataType(string name)
-        {
-            string result = string.Empty;
-            switch (name)
-            {
-                case "Int32":
-                    result = "int";
-                    break;
-                case "Int16":
-                    result = "short";
-                    break;
-                case "Int64":
-                    result = "long";
-                    break;
-                case "String":
-                    result = "string";
-                    break;
-                case "Boolean":
-                    result = "bool";
-                    break;
-                case "Byte[]":
-                    result = "byte[]";
-                    break;
-                case "Double":
-                    result = "double";
-                    break;
-                case "Decimal":
-                    result = "decimal";
-                    break;
-                case "Char":
-                    result = "char";
-                    break;
-                case "Single":
-                    result = "float";
-                    break;
-                case "Byte":
-                    result = "byte";
-                    break;
-                case "Object":
-                    result = "object";
-                    break;
-                case "Guid":
-                    result = "Guid";
-                    break;
-                default:
-                    result = name;
-                    break;
-            }
-            return result;
-        }
-
-        public String UpperCase(String str)
-        {
-            char[] ch = str.ToCharArray();
-            if (ch[0] >= 'a' && ch[0] <= 'z')
-            {
-                ch[0] = (char)(ch[0] - 32);
-            }
-            return new String(ch);
-        }
-
-        public void Clear()
-        {
-            TbxSql.Document.Blocks.Clear();
-            Rtbx.Document.Blocks.Clear();
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string connection = string.Empty;
+            getCondition(out connection);
+            if (string.IsNullOrEmpty(connection))
+            {
+                return;
+            }
+            Logic logic = new Logic();
+            bool result = logic.ConnectSQLTest(connection);
+            if (result)
+            {
+                MessageBox.Show("连接成功");
+            }
+            else
+            {
+                MessageBox.Show("连接失败");
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            string connection = string.Empty;
+            getCondition(out connection);
+            if (string.IsNullOrEmpty(connection))
+            {
+                return;
+            }
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            ConnectionStringSettings mySettings = new ConnectionStringSettings("connectionString", connection, "System.Data.SqlClient ");
+            if (ConfigurationManager.ConnectionStrings["connectionString"] != null)
+                config.ConnectionStrings.ConnectionStrings.Remove("connectionString");
+            // 添加新的连接字符串
+            config.ConnectionStrings.ConnectionStrings.Add(mySettings);
+            // 保存对配置文件的更改
+            config.Save(ConfigurationSaveMode.Minimal);
+            ConfigurationManager.RefreshSection("connectionStrings");
+            DBHelper.doRefresh();//静态变量不刷新的话起不到刷新的作用
+        }
+        #endregion
+
+        #region pageMethod
+        private void getCondition(out string result)
+        {
+            result = string.Empty;
             string ip = this.TBXIP.Text;
             string db = this.TBXDB.Text;
             string dbus = this.TBXDBUS.Text;
@@ -188,21 +149,14 @@ namespace SQLtoEntityTool
 
             string connection = string.Empty;
             Logic logic = new Logic();
-            connection = logic.ComposeSQL(ip, db, dbus, dbpd);
-            bool result = logic.ConnectSQLTest(connection);
-            if (result)
-            {
-                MessageBox.Show("连接成功");
-            }
-            else
-            {
-                MessageBox.Show("连接失败");
-            }
+            result = logic.ComposeSQL(ip, db, dbus, dbpd);
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        public void Clear()
         {
-
+            TbxSql.Document.Blocks.Clear();
+            Rtbx.Document.Blocks.Clear();
         }
+        #endregion
     }
 }

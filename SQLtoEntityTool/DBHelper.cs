@@ -12,7 +12,11 @@ namespace Util
     public static class DBHelper
     {
         //连接字符串
-        static string strConn = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+         static string strConn = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+
+        public static void doRefresh(){
+            strConn = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+        }
 
         #region 执行查询，返回DataTable对象-----------------------
         public static DataTable GetTable(string strSQL)

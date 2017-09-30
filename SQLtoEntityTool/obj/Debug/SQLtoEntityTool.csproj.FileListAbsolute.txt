@@ -1,7 +1,7 @@
 E:\GitCode\SelfWeb\SQLtoEntityTool\bin\Debug\SQLtoEntityTool.exe.config
 E:\GitCode\SelfWeb\SQLtoEntityTool\bin\Debug\SQLtoEntityTool.exe
 E:\GitCode\SelfWeb\SQLtoEntityTool\bin\Debug\SQLtoEntityTool.pdb
-E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.csprojResolveAssemblyReference.cache
+E:\GitCode\SelfWeb\SQLtoEntityTool\bin\Debug\log4net.dll
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\MainWindow.baml
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\MainWindow.g.cs
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\App.g.cs
@@ -11,3 +11,4 @@ E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.Properties.Resource
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.csproj.GenerateResource.Cache
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.exe
 E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.pdb
+E:\GitCode\SelfWeb\SQLtoEntityTool\obj\Debug\SQLtoEntityTool.csprojResolveAssemblyReference.cache
