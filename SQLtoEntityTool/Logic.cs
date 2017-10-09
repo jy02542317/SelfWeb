@@ -29,9 +29,9 @@ namespace SQLtoEntityTool
             }
         }
 
-        public string ComposeSQL(string ip, string db,string dbus, string dbpd)
+        public string ComposeSQL(string ip, string db, string dbus, string dbpd)
         {
-            return string.Format(@"Data Source={0};Initial Catalog={1};User ID={2};Password={3}",ip,db,dbus,dbpd);;
+            return string.Format(@"Data Source={0};Initial Catalog={1};User ID={2};Password={3}", ip, db, dbus, dbpd);
         }
 
         public string ConvertToEntity(DataTable dt)
@@ -55,6 +55,42 @@ namespace SQLtoEntityTool
                 AttributeName.Append("}\n\n");
                 result += AttributeName.ToString();
             }
+            return result;
+        }
+
+        public string ConvertToM2GEntity(DataTable dt, string className)
+        {
+            int count = dt.Columns.Count;
+            string result = string.Empty;
+            string resultClass = string.Empty;
+
+            resultClass += "public " + className + "()\n";
+            resultClass += "{\n";
+            resultClass += "\tthis.TableName = \"[" + className + "]\";\n";
+
+            for (int i = 0; i < count; i++)
+            {
+                StringBuilder AttributeName = new StringBuilder();
+                StringBuilder AttributeNameClass = new StringBuilder();
+                Type type = dt.Columns[i].DataType;
+                string type_name = Util.ConvertM2gDataType(type.Name);
+                string name = Util.UpperCase(dt.Columns[i].ColumnName);
+
+                if (name == "PKID")
+                {
+                    AttributeName.Append("[PrimaryKey(PrimaryKeyPolicy.Auto)]\n");
+                }
+
+                AttributeName.Append("public " + type_name + " " + name + ";\n");
+                AttributeNameClass.Append("\tthis."+name+" =new "+type_name+"(\"["+name+"]\", \"\");\n");
+                result += AttributeName.ToString();
+                resultClass += AttributeNameClass.ToString();
+            }
+
+            resultClass += "}\n\n";
+            resultClass += " public override BusinessObject Clone()\n{\n";
+            resultClass += "\treturn new " + className + "();\n}\n";
+            result = resultClass + result;
             return result;
         }
     }

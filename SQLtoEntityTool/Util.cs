@@ -68,5 +68,60 @@ namespace SQLtoEntityTool
             }
             return result;
         }
+
+        public static string ConvertM2gDataType(string name)
+        {
+            string result = string.Empty;
+            switch (name)
+            {
+                case "Int32":
+                    result = "IntField";
+                    break;
+                case "Int16":
+                    result = "IntField";
+                    break;
+                case "Int64":
+                    result = "IntField";
+                    break;
+                case "String":
+                    result = "StringField";
+                    break;
+                case "Boolean":
+                    result = "BoolField";
+                    break;
+                case "Byte[]":
+                    result = "byte[]";
+                    break;
+                case "Double":
+                    result = "DoubleField";
+                    break;
+                case "Decimal":
+                    result = "DecimalField";
+                    break;
+                case "Char":
+                    result = "char";
+                    break;
+                case "Single":
+                    result = "FloatField";
+                    break;
+                case "Byte":
+                    result = "byte";
+                    break;
+                case "Object":
+                    result = "object";
+                    break;
+                case "Guid":
+                    result = "Guid";
+                    break;
+                case "DateTime":
+                    result = "DateField";
+                    break;
+                default:
+                    result = name;
+                    break;
+            }
+            return result;
+        }
+
     }
 }

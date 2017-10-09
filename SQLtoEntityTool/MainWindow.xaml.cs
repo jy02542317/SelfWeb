@@ -158,5 +158,47 @@ namespace SQLtoEntityTool
             Rtbx.Document.Blocks.Clear();
         }
         #endregion
+
+        private void M2GButton_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange textRange = new TextRange(TbxSqlM2GOld.Document.ContentStart, TbxSqlM2GOld.Document.ContentEnd);
+            string sql = textRange.Text.Trim();
+            string result = string.Empty;
+            if (string.IsNullOrEmpty(sql))
+            {
+                Clear();
+                result = "SQL不能为空！";
+                Paragraph Pr = new Paragraph();
+                Pr.Inlines.Add(result);
+                RtbxM2GOld.Document.Blocks.Add(Pr);
+            }
+            else
+            {
+                try
+                {
+                    DataSet ds = DBHelper.GetDataSet(sql);
+
+                    if (ds != null)
+                    {
+                        string className = tbxM2GClassName.Text;
+                        Logic logic = new Logic();
+                        result = logic.ConvertToM2GEntity(ds.Tables[0], className);
+                    }
+
+                    RtbxM2GOld.Document.Blocks.Clear();
+                    Paragraph Pr = new Paragraph();
+                    Pr.Inlines.Add(result);
+                    RtbxM2GOld.Document.Blocks.Add(Pr);
+                }
+                catch (Exception ex)
+                {
+                    Clear();
+                    result = ex.ToString();
+                    Paragraph Pr = new Paragraph();
+                    Pr.Inlines.Add(result);
+                    RtbxM2GOld.Document.Blocks.Add(Pr);
+                }
+            }
+        }
     }
 }

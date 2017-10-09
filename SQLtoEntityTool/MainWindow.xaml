@@ -16,10 +16,11 @@
             </TabItem>
             <TabItem Header="SQL转换实体M2G">
                 <Grid Margin="0,0,0,-16" >
-                    <RichTextBox HorizontalAlignment="Left" Height="160" Margin="30,20,0,0"    Name="TbxSqlM2GOld" VerticalAlignment="Top"  Width="420"/>
-                    <Button Content="转换" HorizontalAlignment="Left" Margin="190,195,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+                    <RichTextBox HorizontalAlignment="Left" Height="97" Margin="30,20,0,0"    Name="TbxSqlM2GOld" VerticalAlignment="Top"  Width="420"/>
+                    <Button Content="转换" HorizontalAlignment="Left" Margin="190,195,0,0" VerticalAlignment="Top" Width="100" Click="M2GButton_Click"/>
                     <RichTextBox HorizontalAlignment="Left" Height="270" Margin="30,233,0,0" Name="RtbxM2GOld" VerticalAlignment="Top" Width="420" IsReadOnly="True">
                     </RichTextBox>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="180,140,0,0" TextWrapping="Wrap" Text="" Name="tbxM2GClassName" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
             <TabItem Header="设置">
