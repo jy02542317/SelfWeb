@@ -63,6 +63,8 @@ namespace SQLtoEntityTool
             int count = dt.Columns.Count;
             string result = string.Empty;
             string resultClass = string.Empty;
+            string pageResult = string.Empty;
+            string allAttr = string.Empty;
 
             resultClass += "public " + className + "()\n";
             resultClass += "{\n";
@@ -72,6 +74,8 @@ namespace SQLtoEntityTool
             {
                 StringBuilder AttributeName = new StringBuilder();
                 StringBuilder AttributeNameClass = new StringBuilder();
+                StringBuilder PageAttr = new StringBuilder();
+
                 Type type = dt.Columns[i].DataType;
                 string type_name = Util.ConvertM2gDataType(type.Name);
                 string name = Util.UpperCase(dt.Columns[i].ColumnName);
@@ -83,14 +87,17 @@ namespace SQLtoEntityTool
 
                 AttributeName.Append("public " + type_name + " " + name + ";\n");
                 AttributeNameClass.Append("\tthis."+name+" =new "+type_name+"(\"["+name+"]\", \"\");\n");
+                PageAttr.Append("<asp:BoundColumn DataField=\""+name+"\" HeaderText=\"\"></asp:BoundColumn>\n");
                 result += AttributeName.ToString();
                 resultClass += AttributeNameClass.ToString();
+                pageResult += PageAttr.ToString();
+                allAttr += name+',';
             }
 
             resultClass += "}\n\n";
             resultClass += " public override BusinessObject Clone()\n{\n";
             resultClass += "\treturn new " + className + "();\n}\n";
-            result = resultClass + result;
+            result = resultClass + result + pageResult +"\n"+ allAttr;
             return result;
         }
     }
